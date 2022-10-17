@@ -1,6 +1,6 @@
 {
   "name": "kananpassbot_telegram",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Companion bot for the KananPass system",
   "main": "index.js",
   "type": "module",

@@ -1,10 +1,12 @@
 import { Telegraf } from 'telegraf';
 
 import { commandArgs } from './helpers/telegraf-params.js';
-import { start, help, password,
-        randompass, login, register,
-        logout, currentsession, verifyExpirationDate,
-        recover } from './controllers/commands.js';
+import {
+    start, help, password,
+    randompass, login, register,
+    logout, verifyExpirationDate,
+    recover
+} from './controllers/commands.js';
 
 // * Assign token to the bot
 const bot = new Telegraf(process.env.TOKEN_BOT);
@@ -25,7 +27,6 @@ bot.command('recover', (ctx) => recover(ctx, bot));
 // * Commands that can be used with the bot (login required)
 bot.command('login', (ctx) => login(ctx, bot));
 bot.command('logout', (ctx) => logout(ctx, bot));
-bot.command('currentsession', (ctx) => currentsession(ctx, bot));
 
 // * Method for init the bot
 export const botStart = async () => {

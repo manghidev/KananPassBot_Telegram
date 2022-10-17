@@ -1,4 +1,3 @@
-import { translateText } from '../helpers/translate.js';
 import 'cross-fetch/dist/node-polyfill.js';
 import PocketBase from 'pocketbase';
 
@@ -81,20 +80,6 @@ export const recoverPassword = async (params) => {
     } catch (error) {
         console.log('recoverPassword: ', error);
         return await errorAuth(error, params.translate);
-    }
-};
-
-export const currentsessionUser = async (fromId, languageCode) => {
-    const translate = await translateText(languageCode);
-
-    try {
-        const session = await getSessionUser(fromId);
-
-        if (session === undefined) return { error: true, data: { message: translate.texts.error.auth.noAuthenticate } };
-        return { error: false, data: { message: JSON.stringify(session) } };
-    } catch (error) {
-        console.log('currentsessionUser: ', error);
-        return await errorAuth(error, translate);
     }
 };
 

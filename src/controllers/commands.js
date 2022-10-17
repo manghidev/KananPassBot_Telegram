@@ -1,6 +1,6 @@
 import { translateText } from '../helpers/translate.js';
 import { generatePassword } from 'random-generated-password';
-import { loginUser, logoutUser, registerUser, recoverPassword, currentsessionUser } from './auth.js';
+import { loginUser, logoutUser, registerUser, recoverPassword } from './auth.js';
 import { createSessionUser, verifyExpirationTokenDate } from '../models/session.js';
 
 const timeDelayTyping = 1.5;
@@ -8,7 +8,7 @@ const timeDelayDeleteMessage = 5;
 
 export const start = async (ctx) => {
     const translate = await translateText(ctx.message.from.language_code);
-    
+
     ctx.reply(translate.commands.commandStart);
 };
 
@@ -38,7 +38,7 @@ export const randompass = async (ctx, bot) => {
 
 export const password = async (ctx, bot) => {
     const translate = await translateText(ctx.message.from.language_code);
-    
+
     bot.telegram.sendChatAction(ctx.message.from.id, 'typing');
     const params = ctx.state.command.args;
 
@@ -84,7 +84,7 @@ export const login = async (ctx, bot) => {
         if (resp.data.user.profile.avatar !== '') {
             await sendImageToChat(ctx, bot, `${process.env.POKETBASE_URL}/api/files/${resp.data.user.profile['@collectionId']}/${resp.data.user.profile.id}/${resp.data.user.profile.avatar}`);
         }
-    
+
         // * Create a session for the user
         await delayTime(async () => await createSessionUser({
             fromId: ctx.message.from.id,
@@ -143,16 +143,6 @@ export const logout = async (ctx, bot) => {
 
     bot.telegram.sendChatAction(ctx.message.from.id, 'typing');
     const resp = await logoutUser(ctx.message.from.id, translate);
-
-    if (resp.error) return ctx.reply(resp.data.message);
-
-    await delayTime(() => ctx.reply(resp.data.message), timeDelayTyping);
-    await deleteMessageChat(ctx, ctx.message.from.id, ctx.message.message_id);
-};
-
-export const currentsession = async (ctx, bot) => {
-    bot.telegram.sendChatAction(ctx.message.from.id, 'typing');
-    const resp = await currentsessionUser(ctx.message.from.id, ctx.message.from.language_code);
 
     if (resp.error) return ctx.reply(resp.data.message);
 
