@@ -1,0 +1,36 @@
+{
+    "es": {
+        "commands": {
+            "commandStart": "¡Bienvenid@! 😎\n Usame para generar contraseñas 🔑 y para nuevas funciones que se desarrollarán en el futuro. 👨🏽‍💻\n Para ver los comandos disponibles 🤯, escribe /help",
+            "commandhelp": "📃 Comandos disponibles:\n\n /randompass 🔑 Genera una contraseña aleatoria de entre 8 a 30 caracteres con todos los caracteres disponibles.\n\n /password <longitud> <tipo (alphabet, numeric, alphanumeric, all)> Genera una contraseña aleatoria de la longitud indicada y tipo solicitado.\n\n /login <correo> <contraseña> Inicia sesión con tu cuenta de KananPass.\n\n /register <correo> <contraseña> <usuario (JhonDoe - Jhon_Doe - Jhon-Doe)> Registra una nueva cuenta de KananPass.\n\n /logout Cierra tu sesión del bot.\n\n /savepass <contraseña> <nombre> <usuario/correo for the account> <llave de encriptación> Guarda una contraseña en tu cuenta de KananPass. ⚠ En Desarrollo ⚠\n\n /showpass <nombre> <llave de encriptación> Muestra la contraseña que concuerde con el nombre indicado. ⚠ En Desarrollo ⚠\n\n /deletepass <nombre> <texto para confirmar => CONFIRMO_ELIMINAR_CONTRASEÑA> Elimina la contraseña que concuerde con el nombre indicado. ⚠ En Desarrollo ⚠",
+            "commandPassword": "Uso: /password <longitud> <tipo (alphabet, alphabetUpper, alphabetaAll, numeric, alphanumeric, all)>",
+            "commandLogin": "Uso: /login <email> <contraseña>",
+            "commandRegister": "Uso: /register <correo> <contraseña> <nombre (JhonDoe - Jhon_Doe - Jhon-Doe)>",
+            "commandRecover": "Se ha mandado un correo electrónico 📧 al mail proporcionado 🤓"
+        },
+        "texts": {
+            "normal": {
+                "botWelcome": "Hola 👋🏽, soy Kanan 🤝🏽 el bot de telegram 🤖 de KananPass 🫡, te ayudaré a crear, guardar y listar todas tus contraseñas 🔑 de una manera fácil, rápida y segura para que solamente tú 🫵🏽 tengas acceso a ellas 😎 estés donde estés 🌎",
+                "welcome": "Bienvenid@",
+                "hello": "Hola",
+                "am": "soy",
+                "logout": "Has cerrado sesión 👋🏽 vuelve pronto 🤠",
+                "register": "su cuenta 🥳 se ha creado correctamente 😎, verifique su cuenta 🤩 desde el correo electrónico 📧 que se le ha enviado 🤓",
+                "deleteMessage": "Mensaje eliminado 😖 para proteger su contraseña 😉",
+                "closedSession": "tu sesión ha expirado por motivos de seguridad 😮, vuelve a iniciar sesión con el comando /login <email> <contraseña> \n si no recuerdas tu contraseña 😖, puedes recuperarla con el comando /recover <email>\n que sigas disfrutando de KananPassBot 🤖"
+            },
+            "error": {
+                "auth": {
+                    "authenticate": "Usuario o contraseña incorrectos 😢",
+                    "existSession": "Ya tienes una sesión en curso 🤐",
+                    "noAuthenticate": "No estás autenticado 🤐",
+                    "verify": "Debes verificar tu cuenta primero 🥺, desde el correo que te hemos enviado 🤩"
+                },
+                "generic": {
+                    "unknown": "Error desconocido 🤡"
+                }
+            }
+        }
+    },
+    "en": {}
+}

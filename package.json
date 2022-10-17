@@ -1,0 +1,43 @@
+{
+  "name": "kananpassbot_telegram",
+  "version": "0.1.1",
+  "description": "Companion bot for the KananPass system",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manghidev/KananPassBot_Telegram.git"
+  },
+  "keywords": [
+    "telegram",
+    "password",
+    "protect_passwords",
+    "bot",
+    "kananpass"
+  ],
+  "author": "manghidev",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/manghidev/KananPassBot_Telegram/issues"
+  },
+  "homepage": "https://github.com/manghidev/KananPassBot_Telegram#readme",
+  "engines": {
+    "node": ">= 16.14.x",
+    "npm": ">= 8.5.x"
+  },
+  "dependencies": {
+    "cross-fetch": "3.1.5",
+    "crypto-js": "4.1.1",
+    "dotenv": "16.0.3",
+    "pocketbase": "0.7.4",
+    "random-generated-password": "1.1.1",
+    "telegraf": "4.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.20"
+  }
+}
